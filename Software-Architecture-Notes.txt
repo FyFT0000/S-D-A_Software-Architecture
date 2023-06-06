@@ -62,6 +62,21 @@ arrows:
     _Packages can also be <<merge>>. Merging typically occurs when two packages or concepts need to come together into one. This is a use of generalization that allows different definitions to be provided for the same concept.
 _   Package diagrams can be created at any stage of development. They can also adapt and change with the latest version of software being worked on. Package diagrams are particularly useful for technical designers because they allow them to see the dependencies and relations between groups of related elements.
 
+3.1.5 – UML Deployment Diagram
+Are used to visualize the deployment details of a software system. The diagrams include more than just code, but also separate libraries, an installer, configuration files, and many other pieces. In order for software to be ready to run, it is necessary to understand all the files and executables involved and the environments where they reside.
+_   The deployment environment, or deployment target, can be very specific and involve particular hardware devices. It can also be very general and involve supported operating systems. Details in a deployment diagram change accordingly. For example, software developed for Linux, MacOS or Windows may have differences from one another.
+_   Deployment diagrams deal with artifacts. Artifacts are a physical result of the development process. Artifacts for a video game might include things like an executable to run the game, an installer to install the game, audio libraries for sound, and multimedia assets. These are created as outcomes of producing the system and are the final pieces to be put together.
+_   There are two different types of deployment diagrams:
+    _Specification-level diagrams: provides an overview of artifacts and deployment targets, without referencing specific details like machine names. It focuses on a general overview of your deployment rather than the specifics.
+    _Instance level diagrams: is a more specific approach that maps specific artifacts to specific deployment targets. They can identify specific machines and hardware devices. This approach is usually used to highlight the differences in deployments among development, staging, and release builds.
+_   When creating deployment diagrams, it is important to use the correct notation for the various elements:
+    _Nodes: are deployment targets that contain artifacts available for execution.In a deployment diagram, they look like 3D boxes. Hardware devices are also displayed as 3D boxes, only they have a “device” tag on them to differentiate them.
+    _Relationships can be represented as a solid line between two nodes, that shows a relationship between deployment targets. The line shows that the two nodes have a communication path between them. This relationship typically identifies a particular communication protocol.
+        _Manifestation is a relationship where an artifact is a physical realization of a software component. It can be represented with a “manifests” indicatr.
+_   If an artifact is drawn inside a node box, this shows that an artifact is deployed to a node. This also means that the artifact cannot function without this deployment target.
+_   In a deployment diagram, there is a distinct hierarchy of deployment targets. This hierarchy is very important. You should start from the highest level of your deployment information, from application name down to device and operating system.
+_   Deployment diagrams help provide consistency and organization to deployments, which helps avoid system failures. The diagrams also help keep track of the files and executables needed to deploy and run the software. The diagram can be on an instance level specific to the deployment machines you are using, or it can be general for a range of execution environments.
+
 
 
 
