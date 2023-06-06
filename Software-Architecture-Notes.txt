@@ -49,8 +49,21 @@ _   To build a component diagram:
     _Finally, the relationship between these components would need to be identified. When relevant libraries are identified, this extends to third-party implementation dependencies, which should also be integrated into the diagram where relevant.
 _   Component diagrams are especially useful early in the design process, because of its high-level emphasis. They can be drawn at different levels and allows you to focus not only on systems but on subsystems as well.
 
+3.1.4 – UML Package Diagram
+Show packages and the dependencies between them.
+_   These diagrams can organize a completed system into packages of related packageable elements, which could include data, classes, or even other packages. Package diagrams help provide high-level groupings of a system so that it is easy to see how a package contains related elements as well as how different packages depend on each other.
+_   A package groups together elements of software that are related. Elements can be related based on data, classes, or user tasks. A package can also define a “namespace” for elements it contains, that is, a package is named and can organize the named elements of software into a separate scope. An element can be uniquely identified in the system by a fully “qualified name” that is based on its own name and the name of the package that the element is in.
+_   Packages are depicted by tabbed folders. If there are no elements to show in the package, then the package name goes into the centre of the folder. If details are needed, there are two ways this can be expressed: The elements can be nested within the folder. Alternately, oyher notation can be used. Contained elements can also be listed in a package by their names. These names can be partially qualified, but they should be unique within the package.
+_   Relationships are denoted through dotted-line
+arrows:
+    _A package can <<import>> an element from another package or can import the entire contents of other packages. Import tag is public.
+    _A package can do a private import, as indicated by the <<access>> tag
+    _A package can <<uses>> relationship also. Implies that the package requires other for its full implementation.
+    _Packages can also be <<merge>>. Merging typically occurs when two packages or concepts need to come together into one. This is a use of generalization that allows different definitions to be provided for the same concept.
+_   Package diagrams can be created at any stage of development. They can also adapt and change with the latest version of software being worked on. Package diagrams are particularly useful for technical designers because they allow them to see the dependencies and relations between groups of related elements.
 
-   
+
+
 
 
 
