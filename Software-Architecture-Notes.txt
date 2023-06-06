@@ -27,8 +27,6 @@ This model is a way of understanding the key considerations or important perspec
 _   Logical View: focuses on the functional requirements of a system, usually involves the objects of the system. From these objects, a UML class diagram can be created to illustrate the logical view.
     _A class diagram establishes the vocabulary of the problem and resulting system. By defining all of the classes, their attributes, and their behaviours it becomes easy to understand the key abstractions and terminology. Class diagrams are also useful for specifying database schemes. The class diagram makes it easier to see how classes interact and how data should relate to each other in a database.
     _Some of the most effective UML diagrams related to the logical view of a system are the class diagram and the state diagram. Both the class diagram and the state diagram focus on the classes and objects of a system.
-
-
 _   Process View: focuses on achieving non-functional requirements. These are the requirements that specify the desired qualities for the system, which include quality attributes such as performance and availability. The process view also presents processes that correspond to the objects in the logical view.
     _Some of the most effective UML diagrams related to the process view of a system are the activity diagram and the sequence diagram. The activity diagram can illustrate the processes or activities for a system. The sequence diagram shows how objects interact with one another, which involves how methods are executed and in what order.
 _   Development View: describes the hierarchical software structure. It also considers elements such as programming language, libraries, and toolsets. It is concerned with the details of software development and what is involved to support that. This extends to management details such as scheduling, budgets, and work assignments. Essentially, the development view covers the hierarchical software structure and project management.
@@ -36,6 +34,21 @@ _   Physical View: handles how elements in the logical, process, and development
     _One of the most effective UML diagrams related to the physical view of a system is the deployment diagram. It can express how the pieces of a system are deployed onto hardware or execution environments.
 _   Scenarios: align with the use cases or user tasks of a system and show how the four other views work together. For each scenario, there is a script that describes the sequence of interactions between objects and processes. This involves the key objects defined in the logical view, the processes described in the process view, the hierarchy identified in the development view, and the different nodes specified in the physical view. Scenarios relate these elements to provide a complete picture.
 _   None of the views are fully independent of each other, with elements of some views connected to others. The 4+1 view model can be molded to fit many situations to understand the architecture of a software system. Being able to see a complex problem in many different perspectives helps make your software more versatile.
+
+3.1.3 – UML Component Diagram
+Are concerned with the components of a system.
+_   Components are the independent, encapsulated units within a system. Each component provides an interface for other components to interact with it. Component diagrams are used to visualize how a system’s pieces interact and what relationships they have among them.
+_   Component diagrams are different from most other diagrams, as they show high-level structure and not details like attributes and methods. They are purely focused on components and their interactions with each other. Component diagrams are a static view of the software system, and depict the system design at a specific point in its development and evolution. The basis of component diagrams focuses on the components and their relationships. Each component in a diagram has a very specific relationship to the other components through the interface it provides.
+_   Component diagrams have:
+    _Ball connectors: which represent a provided interface. A provided interface shows that a component offers an interface for others to interact with it. The provided interface means that client and consumer components have a way of communicating with that component.
+    _Socket connectors: that display a required interface. The required interface is essential to the component diagram, to show that a component expects a certain interface. This required interface is to be satisfied or provided by some other component.
+    _Assembly relationship: occurs when one component’s provided interface matches another component’s required interface. The provided interface is depicted by a ball, and the required interface is depicted by a socket.
+_   To build a component diagram:
+    _First, you must identify the main objects used in the system.
+    _Next, the relevant libraries for the system need to be identified.
+    _Finally, the relationship between these components would need to be identified. When relevant libraries are identified, this extends to third-party implementation dependencies, which should also be integrated into the diagram where relevant.
+_   Component diagrams are especially useful early in the design process, because of its high-level emphasis. They can be drawn at different levels and allows you to focus not only on systems but on subsystems as well.
+
 
    
 
