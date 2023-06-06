@@ -22,6 +22,23 @@ _   Software architecture typically have the following stakeholders:
     _Clients: Clients make important decisions about the system, like its funding. Software architecture establishes a basis for communication with clients, so they understand what they are paying for and that their needs are met.
     _End users: Users may not care how the software is actually designed, but they do care that it “works well” for them.
 
+3.1.2 – Kruchten's 4 + 1 Model View
+This model is a way of understanding the key considerations or important perspectives that need to be addressed in software architecture.
+_   Logical View: focuses on the functional requirements of a system, usually involves the objects of the system. From these objects, a UML class diagram can be created to illustrate the logical view.
+    _A class diagram establishes the vocabulary of the problem and resulting system. By defining all of the classes, their attributes, and their behaviours it becomes easy to understand the key abstractions and terminology. Class diagrams are also useful for specifying database schemes. The class diagram makes it easier to see how classes interact and how data should relate to each other in a database.
+    _Some of the most effective UML diagrams related to the logical view of a system are the class diagram and the state diagram. Both the class diagram and the state diagram focus on the classes and objects of a system.
+
+
+_   Process View: focuses on achieving non-functional requirements. These are the requirements that specify the desired qualities for the system, which include quality attributes such as performance and availability. The process view also presents processes that correspond to the objects in the logical view.
+    _Some of the most effective UML diagrams related to the process view of a system are the activity diagram and the sequence diagram. The activity diagram can illustrate the processes or activities for a system. The sequence diagram shows how objects interact with one another, which involves how methods are executed and in what order.
+_   Development View: describes the hierarchical software structure. It also considers elements such as programming language, libraries, and toolsets. It is concerned with the details of software development and what is involved to support that. This extends to management details such as scheduling, budgets, and work assignments. Essentially, the development view covers the hierarchical software structure and project management.
+_   Physical View: handles how elements in the logical, process, and development views must be mapped to different nodes or hardware for running the system.
+    _One of the most effective UML diagrams related to the physical view of a system is the deployment diagram. It can express how the pieces of a system are deployed onto hardware or execution environments.
+_   Scenarios: align with the use cases or user tasks of a system and show how the four other views work together. For each scenario, there is a script that describes the sequence of interactions between objects and processes. This involves the key objects defined in the logical view, the processes described in the process view, the hierarchy identified in the development view, and the different nodes specified in the physical view. Scenarios relate these elements to provide a complete picture.
+_   None of the views are fully independent of each other, with elements of some views connected to others. The 4+1 view model can be molded to fit many situations to understand the architecture of a software system. Being able to see a complex problem in many different perspectives helps make your software more versatile.
+
+   
+
 
 
 
