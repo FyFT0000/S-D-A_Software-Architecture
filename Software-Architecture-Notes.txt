@@ -77,6 +77,23 @@ _   If an artifact is drawn inside a node box, this shows that an artifact is de
 _   In a deployment diagram, there is a distinct hierarchy of deployment targets. This hierarchy is very important. You should start from the highest level of your deployment information, from application name down to device and operating system.
 _   Deployment diagrams help provide consistency and organization to deployments, which helps avoid system failures. The diagrams also help keep track of the files and executables needed to deploy and run the software. The diagram can be on an instance level specific to the deployment machines you are using, or it can be general for a range of execution environments.
 
+3.1.6 – UML Activity Diagram
+Allows the representation of the control flow from activity to another in a software system. It captures the dynamic behaviour of the system and allows the mapping of branching into alternative flows.
+_   Activities: are actions that further the flow of execution in a system. They are actions that when completed cause another action to execute. For example, an action can alter or create new objects. These changes or actions can drive your application forward. In order to create an activity diagram, you must:
+    _1. Identify the activities.
+    _2. Identify the respective conditions of the system’s activities.
+_   There are a few major parts to an activity diagram:
+    _Start and End: notes that look like labelled circles. These circles are where the diagram must begin. They show the starting activity that initializes the control flow of the application. The end node shows the final activity of the diagram.
+    Intermediate activities are shaped like an oval, and they describe all of the activities that change the game state before the game ends.
+    _Decision nodes: are diamonds that have an activity leading into it, and there is the possibility of two alternative outcomes as the next activity. The choice of outcome depends on how the condition on the decision node evaluates.
+    _Partitions: divide activities up into different categories.
+such as where it occurs, or the user role involved. 
+_   All essential activities must be included in a diagram as well as the conditions.
+_   Activity diagrams allow the mapping of concurrent activities that happen in parallel. A fork in the flow moves into parallel flows, so activities can happen at the same time. Parallel flows can join into a single flow. To denote this, activity diagrams can use a separate swimlane for each flow denotating Partitions. Swimlanes can also divide activities up into different categories, such as where it occurs or the user role involved. Arrows crossing each lane show how different activities of a system interact across categories.
+_   Activity diagrams allow you to see what activities and conditions should be included in a system. As well, from the diagrams you see the order in which features are encountered while also allowing for alternate flows to be taken into account for the system.
+
+
+
 
 
 
