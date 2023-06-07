@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sharing App</string>
+    <string name="app_name">Sharing App FyFT</string>
     <string name="keyword">Enter Keyword</string>
 
     <string name="title_hint">Title</string>
@@ -39,7 +39,7 @@
 
     <string name="image_icon">Image Icon</string>
 
-    <string name="title_activity_main">Sharing App</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_main">Sharing App FyFT</string>
+    <string name="title_activity_login">Sharing App Sign in</string>
 
 </resources>
