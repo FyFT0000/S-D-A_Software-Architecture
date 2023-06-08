@@ -92,6 +92,14 @@ _   All essential activities must be included in a diagram as well as the condit
 _   Activity diagrams allow the mapping of concurrent activities that happen in parallel. A fork in the flow moves into parallel flows, so activities can happen at the same time. Parallel flows can join into a single flow. To denote this, activity diagrams can use a separate swimlane for each flow denotating Partitions. Swimlanes can also divide activities up into different categories, such as where it occurs or the user role involved. Arrows crossing each lane show how different activities of a system interact across categories.
 _   Activity diagrams allow you to see what activities and conditions should be included in a system. As well, from the diagrams you see the order in which features are encountered while also allowing for alternate flows to be taken into account for the system.
 
+S1 - 3.2.1 – Abstract Data Types and Object-Oriented
+Object-oriented design architectural styles are focused on the data. When modelling a system in object-oriented design, begin by looking at the different kinds of data handled by the system to see how the system can be broken down into abstract data types.
+_   Abstract data type: can be represented as a class that you define to organize data attributes in a meaningful way, so related attributes are grouped together along with their associated methods. Encapsulation restricts access to the data and dictates what can be done with it.
+_   Object-oriented refers to a system composed of objects where each object is an instance of a class. In other words, the type of each object is its class. Objects may interact with each other through the use of their methods. The object-oriented paradigm allows for inheritance among abstract data types. This means that one abstract type can be declared an extension of another type.
+_   These classes themselves form a language-based architecture that arises from basic object-oriented principles. The classes within the system will determine the overall structure of the system. In other words, the overall object-oriented architectural style of a system directly follows from the fact that an object-oriented approach was used in development.
+_   Some problems are well suited to an object-oriented architectural style. However, not all situations will have easily identifiable classes. In some situations, another design choice may be better suited for the problem at hand. In a system centered around scientific computation, the identification of classes may result in unnecessary complexity, and in turn, lower performance.
+
+
 
 
 
