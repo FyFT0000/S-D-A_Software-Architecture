@@ -92,14 +92,17 @@ _   All essential activities must be included in a diagram as well as the condit
 _   Activity diagrams allow the mapping of concurrent activities that happen in parallel. A fork in the flow moves into parallel flows, so activities can happen at the same time. Parallel flows can join into a single flow. To denote this, activity diagrams can use a separate swimlane for each flow denotating Partitions. Swimlanes can also divide activities up into different categories, such as where it occurs or the user role involved. Arrows crossing each lane show how different activities of a system interact across categories.
 _   Activity diagrams allow you to see what activities and conditions should be included in a system. As well, from the diagrams you see the order in which features are encountered while also allowing for alternate flows to be taken into account for the system.
 
-S1 - 3.2.1 – Abstract Data Types and Object-Oriented
+Language-Based Systems
+The programming paradigm of the language selected to implement a system will affect the architectural style of that system. Each programming paradigm has its own set of constructs, principles, and design patterns, and their use shapes the system being created. This section focuses on object-oriented architectural styles, which result from object-oriented programming paradigms.
+
+S1 - 3.2.1 – Abstract Data Types and Object-Oriented (Language-Based Systems)
 Object-oriented design architectural styles are focused on the data. When modelling a system in object-oriented design, begin by looking at the different kinds of data handled by the system to see how the system can be broken down into abstract data types.
 _   Abstract data type: can be represented as a class that you define to organize data attributes in a meaningful way, so related attributes are grouped together along with their associated methods. Encapsulation restricts access to the data and dictates what can be done with it.
 _   Object-oriented refers to a system composed of objects where each object is an instance of a class. In other words, the type of each object is its class. Objects may interact with each other through the use of their methods. The object-oriented paradigm allows for inheritance among abstract data types. This means that one abstract type can be declared an extension of another type.
 _   These classes themselves form a language-based architecture that arises from basic object-oriented principles. The classes within the system will determine the overall structure of the system. In other words, the overall object-oriented architectural style of a system directly follows from the fact that an object-oriented approach was used in development.
 _   Some problems are well suited to an object-oriented architectural style. However, not all situations will have easily identifiable classes. In some situations, another design choice may be better suited for the problem at hand. In a system centered around scientific computation, the identification of classes may result in unnecessary complexity, and in turn, lower performance.
 
-3.2.2 – Main Program and Subroutine
+3.2.2 – Main Program and Subroutine (Language-Based Systems)
 Main program and subroutine architectural styles are focused on functions. They develop from a procedural programming paradigm. C is an example of a language that follows this paradigm.
 _   In a main program and subroutine architectural style, a system is modelled by breaking up the overall functionality of the system into a main program and subroutines. Subroutines are connected by procedure calls, and they may have nested calls. In nested calls, subroutines may call other subroutines, which may call yet more subroutines, and so on. This means that the structure of the resulting code is not flat, but rather it is hierarchical, so it can be modelled as a directed graph. The structure of the subroutines that build up the system affect the structure of the system as a whole. The subroutines declared in the code are structure as a big “call tree”.
 _   In this paradigm, data is stored as variables. Abstract data types are supported in procedural programming; however, inheritance is not explicitly supported. Under this paradigm, it is not easy to make one abstract type an extension of another. The main focus of this paradigm is therefore on the behaviour of functions and how data moves through those functions. The main program and subroutine architectural style is best suited for computation-focused systems.
@@ -107,6 +110,39 @@ _   Each subroutine may have its own local variables. A subroutine has access to
 _   This architectural style promotes modularity and function reuse, which results in certain advantages. When functions are well defined and do not produce side effects, they are considered like “black boxes.” Given an input, they will always have the same output. Further, library functions are easily integrated into programs.
 _   There are also certain disadvantages from this style. Subroutines may mutate data in unexpected ways. A subroutine may be affected by data changes made by another subroutine during execution. This issue is especially true for global data shared across subroutines. Changes to data can be unpredictable and result in a function receiving an input that it was not expecting, or even an input that it is not capable of handling correctly, which can result in run-time errors.
 _   Procedural programming paradigms are well suited to systems centred around computation, such as spending management programs. Identifying object-oriented components of these kinds of systems can be difficult and result in overly complex solutions. However, for problems where abstract data types with modelling make the solution easier, then object-oriented architectural styles are more well suited.
+
+Repository-Based Systems
+Modern software systems rarely operate in isolated environments. As a software developer, any software architecture you create needs to be capable of sharing information between separate components.
+To solve (the state of a component is only temporary while the component is running, and save information in files that are not the best way to transfer data between components) a data-centric software architecture can be used. This architecture allows data to be stored and shared between multiple components, thus increasing the maintainability, reusability, and scalability of the system. This architecture can be achieved by integrating a method of shared data storage, such as a database, into the overall system design.
+At the core of a data-centric architecture are two types of components:
+    _Central data: is the component used to store and serve data across all components that connect to it.
+    _Data accessors: are the components that connect to the central data component. The data accessors make queries and transactions against the information stored in the database.
+
+3.2.3 – Databases (Repository-Based Systems)
+Central data is often stored in a database.
+_   Databases ensure several data qualities, which are important to data-centric architectures. These are:
+    _Data integrity: A database ensures that data is accurate and consistent over its lifespan.
+    _Data persistence: A database ensures that data will live on after a process has been terminated—databases can save data from any number of components.
+_   One way that databases store information is by using tables. Relational databases are a type of database that uses tables. Each table represents an abstraction.
+_   Relational databases use Structured Query Language (SQL) to query or “ask” the database for information and to perform transactions or “tell” the database to do something. These abilities allow for information to be shared through a database between data accessors.
+_   The management and optimization of queries and transactions can be automated by a data base management system (DBMS), so integrating a database into a system is simplified.
+_   In data-centric architectural design, the central data is passive. Central data is primarily concerned with storing and serving information, not with heavy data processing or large amounts of business logic.
+_   Data accessors: are any component that connects to a database, which is characterized by its abilities to:
+    _Share a set of data, while being able to operate independently.
+    _Communicate with the database through database queries and transactions. Data accessors do not need to interact directly with each other and therefore do not need to know about each other.
+    _Query the database to obtain shared system information. This is used to get data in order to perform computations.
+    _Save the new state of the system back into the database using transactions. Data is stored back into the database once the data accessor has finished its processing.
+_   A data accessor contains all the business rules required to perform its functions. This means that this software architecture enables you to separate concerns into different, specialized data accessors. Also, use of the data accessors can be controlled, so an end user only has permission for the ones they need on a day-to-day basis.
+_   Data-centric architecture presents many advantages over a basic object-oriented system, because of the integration of a centralized database. These advantages include:
+    _Increased support of data integrity, data backup, and data restoration.
+    _Reduced overhead for data transfer between data accessor, as data accessors do not need to be concerned with talking to one another—the database communicates for them,
+    _A system that can be easily scaled up, as data accessors are functionally independent, so additional features can be added without having to worry about affecting others.
+    _Central data components usually “live” on a separate server machine with sufficient disk storage dedicated to the database, which allow for easier management of information.
+_   Data-centric architecture also presents disadvantages. Integrating a database can disadvantage a system in the following ways:
+    _The system is heavily reliant on the central data component, so if it becomes unavailable or if the data corrupts, then the entire system is affected. Safeguards such as data redundancies that replicate data on separate hard disks can be costly.
+    _Data accessors are dependent on what gets stored in the database. New data accessors need to build around the existing data schema. Anything that isn’t stored needs to be computed, or if there is no matching column or table for a specific data need, then the database cannot be used.
+    _It is difficult to change the existing data schema, particularly if a large amount of data is already stored. Further, data schema changes will affect data accessors.
+_   In summary, data-centric software architecture is a commonly used design by many companies. They allow large amounts of data to be stored and managed in a central data repository, making a system more stable, reusable, maintainable, and exhibit better performance. They also separate the functionality of data accessors, so it is easier to scale the system. Finally, they also facilitate data sharing between data accessors through database queries and transactions.
 
 
 
