@@ -144,6 +144,25 @@ _   Data-centric architecture also presents disadvantages. Integrating a databas
     _It is difficult to change the existing data schema, particularly if a large amount of data is already stored. Further, data schema changes will affect data accessors.
 _   In summary, data-centric software architecture is a commonly used design by many companies. They allow large amounts of data to be stored and managed in a central data repository, making a system more stable, reusable, maintainable, and exhibit better performance. They also separate the functionality of data accessors, so it is easier to scale the system. Finally, they also facilitate data sharing between data accessors through database queries and transactions.
 
+3.2.4 – Layered Systems
+In software, a layer is a collection of components that work together towards a common purpose. The key characteristic of a layered architecture is that the components in a layer only interact with components in their own layer or adjacent layers. When an upper layer interacts with the layer directly below it, it cannot see any of the deeper layers.
+_   Usually, the inner or bottom layer provides services or abstractions for the layer outside or above it. The interfaces provided by the components of a layer should be well defined and driven by the needs of the system.
+_   Layering allows for applying “separation of concerns” into each of the layers. Many layered systems are split into “presentation,” “logic,” and “data” layers.
+_   An operating system for a computer is a common example of a layered system:
+    _The kernel is the core of the operating system. One of its main responsibilities is to interface with the hardware and allocating resources.
+    _Above the kernel layer is the system and application libraries layer. This layer provides the higher-level functions for saving files or drawing graphics.
+    _Above this layer is the utilities and applications layer, which to most users is the operating system. Utilities are tools included with the operating system, such as command-line programs.
+_   Advantages of layered systems include the fact that:
+    _Users can perform complex tasks without needing to understand the layers below.
+    _Different layers can be run at different levels of authorization or privilege. Typically, the top layer is considered the “user space” that does not have authority to allocate system resources or communicate with hardware directly. This “sandboxing” provides security and reliability to the kernel.
+    _Designs will be more loosely coupled, as layered architecture follows the principle of least knowledge.
+_   There are certain trade-offs to be aware of in layered systems. Most notably, enforcing layers has an efficiency trade-off. If only adjacent layers can communicate, then the system will likely have some interactions that pass through one layer to the next, and sometimes information must be shared between layers that are not adjacent. This extra communication adds complexity and uses up processing resources.
+_   Overhead must be balanced against the separation of concerns gained from enforcing layers. If most communication is passing directly through a layer, then the design may need to be relaxed, or a different architecture may be better suited to the problem. If only a small amount of communication is passed through, then a layered system may be a good choice. Layered architecture can be relaxed by allowing for passthrough. In a diagram, this is shown as a notch in the layer.
+_   In summary, layered architecture:
+    _It can be intuitive and powerful. Many organizations and solutions have layered structures, so it is easy to apply layered architecture where appropriate.
+    _It supports the separation of concerns, because each layer is a set of components with similar responsibility or purpose.
+    _It is modular and loosely coupled, as each layer only communications with one or two other layers, allowing for different implementations to be easily swapped.
+    _It can be adapted so that layering is not always strict, which helps manage design complexity or provide a starting point for structuring the system.
 
 
 
