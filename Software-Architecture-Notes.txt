@@ -164,6 +164,26 @@ _   In summary, layered architecture:
     _It is modular and loosely coupled, as each layer only communications with one or two other layers, allowing for different implementations to be easily swapped.
     _It can be adapted so that layering is not always strict, which helps manage design complexity or provide a starting point for structuring the system.
 
+3.2.5 – Client Server n-Tier
+n-Tier or multitier architectures are related to layered architectures. Tiers refer to components that are typically on different physical machines. Although the terms “tier” and “layer” are used interchangeably, they are not the same thing. n-Tier or multitier architectures are layered architectures based on tiers.
+_   The number of tiers in an n-Tier architecture can vary, although three-tier and four-tier architectures are common. The relationship between two adjacent tiers in an n-Tier architecture is often a client/server relationship. In a client/server relationship, one program (the server) provides services such as storing information in a database or performing computation tasks upon request from another program (the client). This communication is known as the request-response. A tier can act as both a server and a client, fulfilling the requests of its clients and making requests of its servers at the same time.
+_   Client-host and server-host refer to machines that host client software and server software respectively.
+_   Request-response relationships can be:
+    _A synchronous request-response relationship is one where the client sends a request, then awaits the server’s response before continuing execution. In UML, synchronous messages are depicted with a closed arrowhead. Servers do not always respond quickly, so a synchronous message may cause the client user interface to freeze while waiting for a response.
+    _An asynchronous request-response relationship is one where the client sends a request, but control returns right away, so it can continue its processing on another need. None of this processing can depend on the response from the server. Once the server has completed the request, a message is sent to the client, which will have a handler to process the response. In UML, an asynchronous message is depicted with a line-arrowhead.
+_   Client requests are often designed to run asynchronously, because it is often preferable to have clients be responsive for other tasks even if they are waiting for information from the server. Limiting client/server relationships to request/response messaging patterns allows for systems that can be scaled more easily by adding clients. Clients and servers are extensible, because as long as a server receives a message it knows, it will respond. The source of the message is not important to the server, so many clients can be added as needed.
+_   n-Tier architecture can take on different numbers of tiers, based on separation of concerns. Additional tiers can be added to the system for specific purposes.
+_   In a three-tier architecture, where a tier
+is inserted between the database and end users. This tier is often referred to as a middle layer, a business layer, or an application layer—its name depends on its main responsibility. The middle layer will be a client of the database, and a server for the client application software on the end users’ devices. Middle tiers help determine how or when data can be changed, and in what ways. Having a middle layer allows client application software to be thinner, as it can be focused on presentation only. This makes it easier to maintain.
+_   Two potential drawbacks of n-Tier architecture include:
+    _It requires extra resources to manage the client/server relationships. If more tiers are added, there are more machines or processes to manage, with different communication protocols. This makes a system more complex, and therefore more difficult to change and maintain.
+    _A server acts as a central point of failure. Systems may have backups or mirrors, but it can take time to switch to these backups and recover the server. Redundant servers are possible but add complexity.
+_   The advantages of n-Tier architecture are notable, however, and contribute to its common use in the software industry:
+    _n-Tier architecture is very scalable. Clients can continue to be added as long as a server can handle all the requests it receives in a reasonable time.
+    _Centralization of functionality allow for data to reside on one machine but to be accessible by any machine on the same network.
+    _Centralization of computing power allows client machines to require less processing power. Companies can thus offer processing power as a service, which is more practical and cost effective.
+    _n-Tier architecture supports separation of concerns. Middle layers can take the role of managing application logic and accessing the database directly. Adding tiers can further allow for loose coupling and levels of abstraction, making a system that is easier to change and extend.
+_   When a system can be split into service roles and request roles, a client/server architecture should be considered.
 
 
 
