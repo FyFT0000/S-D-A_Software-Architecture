@@ -208,6 +208,24 @@ _   Some practical applications for state transition systems for most modern sys
 _   In addition, state transition systems can help us identify deadlocks. A deadlock occurs when a process is waiting indefinitely for another to release a shared resource or complete its work. A state transition system can help you easily identify deadlocks since they occur if there is a condition that prevents a transition out of particular state.
 _   Modern day software continues to become more complex. Their reliance on computing techniques such as multithreading makes it more difficult to manage system resources, or determine the state that your system is in. State transition systems helps alleviate this issues by modeling the behavior of a system, and gives you a better understanding of how a system will transition from one state to another.
 
+Dataflow Systems
+involve a series of transformation on sets of data. Data is transformed from one form into another using different types of operations.
+
+3.2.7 – Pipes and Filters
+A pipe and filter architectural style has independent entities called filters, which perform transformations on data input they receive, and pipes, which serve as connectors for the stream of data being transformed.
+_   Data flows in one direction, beginning at the data source and moving through a series of pipes and filters, to end at the data target. Changes to data are done sequentially from filter to filter. Each pipe serves as a connector for the stream of data. It transmits the output of one filter as input for the next filter. Each filter performs its local transformation on the data input it receives from the previous pipe and then sends the output on to the next pipe.
+_   The order in which the filters transform data may change the end result. This is similar to mathematics—the order in which addition or multiplication occurs in an expression can change the end result.
+_   Advantages to using the pipe and filter architecture include:
+    _Loose and flexible coupling of components. In particular, this applies to filters. Each filter runs independently of other filters, which allows the easy addition of new filters, of moving filters around, or of changing individual filters in a system.
+    _Filters can be treated as black boxes. Users of the system do not need to know the inner workings of each filter.
+    _Reusability. Each filter can be called and used over and over again with different inputs. Filters can be repeatedly used in many different applications for different purposes.
+_   Disadvantages to using the pipe and filter architecture include:
+    _Reduced performance due to excessive overheads in filters. Each filter must receive input, parse that input into some data structure, perform transformations, and send data out. If every filter must do this, it is a lot of overhead, and the performance of the system will be affected as more and more filters are added.
+    _Filters may get overloaded with massive amounts of data to process. If one filter is working to process large amounts of data, other filters may be waiting for inputs.
+    _This architecture cannot be used for interactive applications. Applications that require rapid responses will not find this architecture suitable, as data transfers and transformations take time depending on the amount of data being transmitted.
+_   Pipe and filter architectures are popular in use, such as in the UNIX operating system for text-based utilities. If different data sets need to be manipulated in a system, the pipe and filter architecture is a good choice.
+
+
 
 
 
