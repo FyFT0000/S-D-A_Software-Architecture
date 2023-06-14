@@ -343,7 +343,11 @@ _   Modern systems are becoming more and more complex, and creating an architect
 _   ATAM is a common method for analyzing and evaluating architectures, especially as it does not require evaluators to have intimate knowledge of the system, and covers the viewpoints of all important stakeholders. ATAM helps minimize risks in a system by identifying them and helps architects minimize the effects of sensitivity points and be sensible about trade-offs.
 _   ATAM also helps facilitate communication between stakeholders, including identifying issues with newly discovered functionalities that the stakeholders expressed to be important.
 
-
+3.3.3 – Relationship to Organizational Structure
+A study from the Harvard Business School showed that looser organizational structures, such as in open-source projects, led to more loosely coupled modular code (MacCormack, Rusnak, & Baldwin, 2007). On the other hand, in-house development teams tended towards tighter coupling. They suggest that this difference could be due to conscious choices by the developers or just a natural consequence of the environment in which the software is developed. This study supports Conway’s Law. This law states that a software system will tend to take a form that is congruous to the organization that produced it.
+_   This law should be taken into consideration when putting a software development team together. Rather than bringing a team together to work on a project with constant communication that can lead to a tightly coupled system, knowledge of Conway’s Law should result in planning development teams around the desired architecture. Many programmers know Conway’s Law explicitly or intuitively.
+_   When putting together a team of developers, it is a good idea to first plan the architecture that works best for the system and organize the team around that architecture. For example, if you are building a web application using the n-Tier architecture, you could have one team for the data backend, one team for the application logic layer, and one for the presentation tier.
+_   This increases the importance of flexibility in design, as there may be cases where implementation of a component is not yet known or may change. Conway’s Law  ay entail extra work to provide unified and scalable architectures. There may be need of a team whose purpose is to consolidate and enforce common services across the whole system.
 
 
 
